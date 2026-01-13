@@ -29,8 +29,11 @@ ollama pull hf.co/CompendiumLabs/bge-base-en-v1.5-gguf
 ollama pull hf.co/bartowski/Llama-3.2-1B-Instruct-GGUF
 ```
 
-### 4. Download dataset
+### 4. Dataset
 
+This project uses a small public text dataset about cat facts.
+
+To download:
 ``` bash
 mkdir -p data
 curl -L -o data/cat-facts.txt https://huggingface.co/ngxson/demo_simple_rag_py/resolve/main/cat-facts.txt
