@@ -22,8 +22,8 @@ def embed_texts(texts: List[str]) -> np.ndarray:
     return embs
 
 
-def build_faiss_index(chunks: List[str]) -> FaissStore:
-    print("Building FAISS index...")
+def build_faiss_store(chunks: List[str]) -> FaissStore:
+    print("Building FAISS store...")
 
     vectors = embed_texts(chunks)  # (N, D)
 
@@ -37,7 +37,6 @@ def build_faiss_index(chunks: List[str]) -> FaissStore:
     index = faiss.IndexFlatIP(dim)
 
     index.add(vectors)
-    print(f"Added {index.ntotal} vectors to FAISS index.")
 
     return FaissStore(index=index, chunks=chunks)
 
@@ -59,8 +58,5 @@ def search(store: FaissStore, query: str, k: int = 5) -> List[Tuple[str, float]]
         results.append((store.chunks[idx], float(score)))
 
     print(f"Retrieved {len(results)} result(s).")
-
-    for chunk, score in results:
-        print(f"[{score}] {chunk}")
     
     return results

@@ -58,6 +58,9 @@ def main():
     query = "How much do cats sleep?"
     hits = search(store, query, k=5)
 
+    for chunk, score in hits:
+        print(f"[{score}] {chunk}")
+
 
 if __name__ == "__main__":
     main()
