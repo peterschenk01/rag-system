@@ -17,7 +17,6 @@ This repository implements:
 
 ## Technology Stack
 
-- **Python 3.12+**
 - [**FAISS**](https://github.com/facebookresearch/faiss) — high-performance vector similarity search
 - [**Ollama**](https://ollama.com/) — embeddings & generative inference
 - [**UV**](https://docs.astral.sh/uv/) — development environment manager
