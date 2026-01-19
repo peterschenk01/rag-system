@@ -1,10 +1,10 @@
 from __future__ import annotations
 
+import logging
+
 import faiss
 
 from rag_system.index import FaissStore, embed_texts
-
-import logging
 
 logger = logging.getLogger(__name__)
 

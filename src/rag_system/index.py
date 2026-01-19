@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import logging
 from dataclasses import dataclass
 
 import faiss
@@ -7,8 +8,6 @@ import numpy as np
 import ollama
 
 from rag_system.config import EMBEDDING_MODEL
-
-import logging
 
 logger = logging.getLogger(__name__)
 

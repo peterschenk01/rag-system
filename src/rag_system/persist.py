@@ -1,11 +1,10 @@
 import json
+import logging
 from pathlib import Path
 
 import faiss
 
 from rag_system.index import FaissStore
-
-import logging
 
 logger = logging.getLogger(__name__)
 

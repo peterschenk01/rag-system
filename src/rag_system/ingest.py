@@ -1,8 +1,7 @@
+import logging
 import urllib.request
 
 from rag_system.config import DATA_PATH, DATA_URL
-
-import logging
 
 logger = logging.getLogger(__name__)
 
