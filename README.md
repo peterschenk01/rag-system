@@ -1,6 +1,6 @@
 # Retrievel-Augmented Generation System
 
-A **simple Retrieval-Augmented Generation (RAG) application** built in Python using FAISS for vector search and Ollama for embeddings and LLM inference.
+A **Retrieval-Augmented Generation (RAG) System** built in Python using FAISS for vector search and Ollama for embeddings and LLM inference.
 
 
 ## Project Overview
