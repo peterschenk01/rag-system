@@ -74,3 +74,14 @@ This will:
 3. Persist – save the FAISS index + chunk mapping
 4. Manifest – fingerprint dataset and config to validate store
 5. Query – embed query, search FAISS, return results
+
+## Development
+
+This project uses CI and pre-commit hooks to enforce code quality and consistency.
+
+After cloning the repository:
+
+``` bash
+uv sync --dev
+uv run pre-commit install
+```
