@@ -36,3 +36,8 @@ jobs:
 
       - name: Format check (ruff)
         run: uv run ruff format --check .
+
+      - name: Run tests (pytest)
+        env:
+          PYTHONPATH: .
+        run: uv run pytest -q

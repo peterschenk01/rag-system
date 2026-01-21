@@ -47,19 +47,20 @@ def build_and_persist_store(dataset: list[str]) -> FaissStore:
 
 
 def get_or_build_store(dataset: list[str]) -> FaissStore:
-    expected = get_expected_manifest()
-
     if store_exists(STORAGE_DIR):
         try:
             stored = load_manifest(STORAGE_DIR)
         except FileNotFoundError:
             logger.info("Manifest missing! Rebuilding FAISS store.")
-        else:
-            if is_compatible(stored=stored, expected=expected):
-                logger.info("Manifest matches! Using persisted FAISS store.")
-                return load_store(STORAGE_DIR)
+            return build_and_persist_store(dataset)
 
-            logger.info("Persisted FAISS store incompatible! Rebuilding...")
+        expected = get_expected_manifest()
+
+        if is_compatible(stored=stored, expected=expected):
+            logger.info("Manifest matches! Using persisted FAISS store.")
+            return load_store(STORAGE_DIR)
+
+        logger.info("Persisted FAISS store incompatible! Rebuilding...")
 
     return build_and_persist_store(dataset)
 

@@ -10,9 +10,7 @@ logger = logging.getLogger(__name__)
 
 
 def store_exists(storage_dir: Path) -> bool:
-    return (storage_dir / "index.faiss").exists() and (
-        storage_dir / "chunks.json"
-    ).exists()
+    return (storage_dir / "index.faiss").exists() and (storage_dir / "chunks.json").exists()
 
 
 def save_store(store: FaissStore, storage_dir: Path) -> None:
